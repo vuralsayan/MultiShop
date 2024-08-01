@@ -28,6 +28,22 @@ MultiShop, mikroservis mimarisiyle geliştirilmiş kapsamlı bir e-ticaret platf
 
 
 ## Görseller
+![](https://raw.githubusercontent.com/vuralsayan/MultiShop/master/Images/1.png)
+![](https://raw.githubusercontent.com/vuralsayan/MultiShop/master/Images/2.png)
+![](https://raw.githubusercontent.com/vuralsayan/MultiShop/master/Images/3.png)
+![](https://raw.githubusercontent.com/vuralsayan/MultiShop/master/Images/4.png)
+![](https://raw.githubusercontent.com/vuralsayan/MultiShop/master/Images/5.png)
+![](https://raw.githubusercontent.com/vuralsayan/MultiShop/master/Images/6.png)
+![](https://raw.githubusercontent.com/vuralsayan/MultiShop/master/Images/7.png)
+![](https://raw.githubusercontent.com/vuralsayan/MultiShop/master/Images/8.png)
+![](https://raw.githubusercontent.com/vuralsayan/MultiShop/master/Images/9.png)
+![](https://raw.githubusercontent.com/vuralsayan/MultiShop/master/Images/10.png)
+![](https://raw.githubusercontent.com/vuralsayan/MultiShop/master/Images/11.png)
+![](https://raw.githubusercontent.com/vuralsayan/MultiShop/master/Images/12.png)
+![](https://raw.githubusercontent.com/vuralsayan/MultiShop/master/Images/13.png)
+![](https://raw.githubusercontent.com/vuralsayan/MultiShop/master/Images/14.png)
+![](https://raw.githubusercontent.com/vuralsayan/MultiShop/master/Images/15.png)
+![](https://raw.githubusercontent.com/vuralsayan/MultiShop/master/Images/16.png)
 
 
 
