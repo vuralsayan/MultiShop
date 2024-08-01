@@ -28,6 +28,7 @@ MultiShop, mikroservis mimarisiyle geliştirilmiş kapsamlı bir e-ticaret platf
 
 
 ## Görseller
+![](https://raw.githubusercontent.com/vuralsayan/MultiShop/master/Images/MultiShop_Diagram.png)
 ![](https://raw.githubusercontent.com/vuralsayan/MultiShop/master/Images/1.png)
 ![](https://raw.githubusercontent.com/vuralsayan/MultiShop/master/Images/2.png)
 ![](https://raw.githubusercontent.com/vuralsayan/MultiShop/master/Images/3.png)
@@ -44,8 +45,6 @@ MultiShop, mikroservis mimarisiyle geliştirilmiş kapsamlı bir e-ticaret platf
 ![](https://raw.githubusercontent.com/vuralsayan/MultiShop/master/Images/14.png)
 ![](https://raw.githubusercontent.com/vuralsayan/MultiShop/master/Images/15.png)
 ![](https://raw.githubusercontent.com/vuralsayan/MultiShop/master/Images/16.png)
-
-
 
 > [vuralsayan.com](https://www.vuralsayan.com) &nbsp;&middot;&nbsp;
 > GitHub [@vuralsayan](https://github.com/vuralsayan) &nbsp;&middot;&nbsp;
