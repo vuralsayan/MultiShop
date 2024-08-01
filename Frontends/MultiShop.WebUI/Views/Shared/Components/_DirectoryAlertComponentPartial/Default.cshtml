@@ -1,0 +1,26 @@
+﻿@{
+    var directory1 = ViewBag.Directory1;
+    var directory2 = ViewBag.Directory2;
+    var directory3 = ViewBag.Directory3;
+}
+
+<div class="container-fluid">
+    <div class="row px-xl-5">
+        <div class="col-12">
+            <nav class="breadcrumb bg-light mb-30">
+                @if (!string.IsNullOrEmpty(directory1))
+                {
+                    <a class="breadcrumb-item text-dark" href="#">@directory1</a>
+                }
+                @if (!string.IsNullOrEmpty(directory2))
+                {
+                    <a class="breadcrumb-item text-dark" href="#">@directory2</a>
+                }
+                @if (!string.IsNullOrEmpty(directory3))
+                {
+                    <span class="breadcrumb-item active">@directory3</span>
+                }
+            </nav>
+        </div>
+    </div>
+</div>

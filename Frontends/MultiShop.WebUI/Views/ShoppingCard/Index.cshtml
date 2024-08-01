@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/UILayout/_UILayout.cshtml";
+}
+@* SHOPPING CARD INDEX *@
+<vc:_directory-alert-component-partial />
+<div class="container-fluid">
+    <div class="row px-xl-5">
+        <vc:_product-list-shopping-card-component-partial />
+        @* <vc:_discount-coupon-shopping-card-component-partial /> *@
+        @await Html.PartialAsync("~/Views/Discount/ConfirmDiscountCoupon.cshtml")
+    </div>
+</div>

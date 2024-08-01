@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<script src="~/microsoft/signalr/dist/browser/signalr.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+@* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> *@
+
+<script type="text/javascript">
+    $(document).ready(() => {
+        var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:7102/signalrHub").build();
+        $("#connstatus").text(connection.state);
+
+        connection.start().then(() => {
+            $("#connstatus").text(connection.state);
+            connection.invoke("SendStatisticCount");
+        }).catch((err) => { console.log(err); });
+
+        connection.on("ReceiveTotalCommentCount", (commentCount) => {
+            $("#commentcount").text(commentCount);
+        });
+
+
+    });
+
+</script>
+
+<section class="content container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="chart-box">
+                <h4>Kategori Listesi</h4>
+                <p>Kategorilerle ile ilgili işlemlerinizi aşağıdaki tablo üzerinden gerçekleştirebilirsiniz.</p>
+                <div class="bs-example" data-example-id="bordered-table">
+                    <div class="col-mad-8 offset-2">
+                        <div class="alert alert-primary">Bağlantı Durumu: <strong id="connstatus"></strong></div>
+                        <div class="alert alert-primary">Yorum Sayısı: <strong id="commentcount"></strong></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

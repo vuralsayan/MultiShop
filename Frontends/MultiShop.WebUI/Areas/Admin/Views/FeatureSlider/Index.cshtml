@@ -1,0 +1,53 @@
+﻿@model List<ResultFeatureSliderDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+@* ADMIN FEATURE SLIDER INDEX *@
+<section class="content container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="chart-box">
+                <h4>Öne Çıkan Görsel Listesi</h4>
+                <p>Öne Çıkan Görseller ile ilgili işlemlerinizi aşağıdaki tablo üzerinden gerçekleştirebilirsiniz.</p>
+                <div class="bs-example" data-example-id="bordered-table">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Görsel Başlığı</th>
+                                <th>Durum</th>
+                                <th>Sil</th>
+                                <th>Güncelle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                count++;
+                                <tr>
+                                    <th scope="row">@count</th>
+                                    <td>@item.Title</td>
+                                    @if (item.Status == true)
+                                    {
+                                        <td><a href="javascript:void(0)" class="btn btn-success btn-rounded">Aktif</a></td>
+                                    }
+                                    else
+                                    {
+                                        <td><a href="javascript:void(0)" class="btn btn-danger btn-rounded">Pasif</a></td>
+                                    }
+                                    <td><a href="/Admin/FeatureSlider/DeleteFeatureSlider/@item.FeatureSliderID" class="btn btn-danger">Sil</a></td>
+                                    <td><a href="/Admin/FeatureSlider/UpdateFeatureSlider/@item.FeatureSliderID" class="btn btn-primary">Güncelle</a></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <br />
+                    <a href="/Admin/FeatureSlider/CreateFeatureSlider" class="btn btn-success">Yeni Öne Çıkan Görsel Girişi</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

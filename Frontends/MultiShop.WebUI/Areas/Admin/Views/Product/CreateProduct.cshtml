@@ -1,0 +1,43 @@
+﻿@model CreateProductDto
+@{
+    ViewData["Title"] = "CreateProduct";
+    Layout = "~/Areas/Admin/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<section class="content container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="chart-box">
+                <h4>Ürün Ekleme Sayfası</h4>
+                <form method="post">
+                    <div class="form-group">
+                        <label>Ürün Adı</label>
+                        <input type="text" class="form-control" placeholder="Ürün Adı" asp-for="ProductName">
+                    </div>
+                    <div class="form-group">
+                        <label>Ürün Kategorisi</label>
+                        <select class="form-control" style="padding-top: 5px; padding-bottom: 5px;" asp-for="CategoryID" asp-items="@ViewBag.Categories">
+                            <option disabled selected>Lütfen Ürün Kategorini Seçiniz</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Ürün Fiyatı</label>
+                        <input type="text" class="form-control" placeholder="Ürün Fiyatı" asp-for="ProductPrice">
+                    </div>
+                    <div class="form-group">
+                        <label>Ürün Görseli</label>
+                        <input type="text" class="form-control" placeholder="Ürün Görseli" asp-for="ProductImageUrl">
+                    </div>
+                    <div class="form-group">
+                        <label>Ürün Açıklaması</label>
+                        <textarea class="form-control" rows="4" asp-for="ProductDescription"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Ekle</button>
+                    <a href="/Admin/Product/ProductListWithCategory" class="btn btn-danger">İptal</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+

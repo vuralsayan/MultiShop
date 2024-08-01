@@ -1,0 +1,44 @@
+﻿@model List<BasketItemDto>
+<div class="col-lg-8 table-responsive mb-5">
+    <table class="table table-light table-borderless table-hover text-center mb-0">
+        <thead class="thead-dark">
+            <tr>
+                <th>Ürün</th>
+                <th>Fiyat</th>
+                <th>Miktar</th>
+                <th>Toplam</th>
+                <th>Kaldır</th>
+            </tr>
+        </thead>
+        <tbody class="align-middle">
+            @foreach (var item in Model)
+            {
+                var price = String.Format("{0:N2} ₺", item.Price);
+                var totalPrice = item.Price * item.Quantity;
+                var formattedTotalPrice = String.Format("{0:N2} ₺", totalPrice);
+
+                <tr>
+                    <td class="align-middle"><img src="@item.ProductImageUrl" alt="" style="width: 50px; height:50px;"> @item.ProductName</td>
+                    <td class="align-middle">@price</td>
+                    <td class="align-middle">
+                        <div class="input-group quantity mx-auto" style="width: 100px;">
+                            <div class="input-group-btn">
+                                <button class="btn btn-sm btn-primary btn-minus">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                            </div>
+                            <input type="text" class="form-control form-control-sm bg-secondary border-0 text-center" value="@item.Quantity">
+                            <div class="input-group-btn">
+                                <button class="btn btn-sm btn-primary btn-plus">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="align-middle">@formattedTotalPrice</td>
+                    <td class="align-middle"><a href="/ShoppingCard/RemoveBasketItem/@item.ProductID" class="btn btn-sm btn-danger"><i class="fa fa-times"></i></a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

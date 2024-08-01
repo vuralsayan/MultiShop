@@ -1,0 +1,23 @@
+﻿@model List<ResultProductImageByProductId>
+@{
+    bool isFirst = true;
+}
+<div class="col-lg-5 mb-30">
+    <div id="product-carousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner bg-light">
+            @foreach (var item in Model)
+            {
+                <div class="carousel-item @(isFirst ? "active" : "")">
+                    <img class="w-100 h-100" src="@item.ImageUrl" alt="">
+                </div>
+                isFirst = false;
+            }
+        </div>
+        <a class="carousel-control-prev" href="#product-carousel" data-slide="prev">
+            <i class="fa fa-2x fa-angle-left text-dark"></i>
+        </a>
+        <a class="carousel-control-next" href="#product-carousel" data-slide="next">
+            <i class="fa fa-2x fa-angle-right text-dark"></i>
+        </a>
+    </div>
+</div>

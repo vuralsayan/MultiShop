@@ -1,0 +1,46 @@
+﻿@model List<ResultProductImageByProductId>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+@* ADMIN PRODUCT IMAGE INDEX *@
+<section class="content container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="chart-box">
+                <h4>Ürün Görsel Listesi</h4>
+                <div role="alert" class="alert alert-success"> <strong>Ürün ID: </strong>@ViewBag.productID</div>
+                <div class="bs-example" data-example-id="bordered-table">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Görsel</th>
+                                <th>Sil</th>
+                                <th>Güncelle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <th scope="row">@item.ProductImageID</th>
+                                    <td><img src="@item.ImageUrl" style="width:100px; height: 100px;" /></td>
+                                    <td>
+                                        <a href="/Admin/ProductImage/DeleteProductImage/@item.ProductImageID?productId=@ViewBag.productID" class="btn btn-danger">Sil</a>
+                                    </td>
+                                    <td>
+                                        <a href="/Admin/ProductImage/UpdateProductImage/@item.ProductImageID?productId=@ViewBag.productID" class="btn btn-primary">Güncelle</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <br />
+                    <a href="/Admin/ProductImage/CreateProductImage/@ViewBag.productID" class="btn btn-success">Yeni Ürün Görsel Girişi</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/UILayout/_UILayout.cshtml";
+}
+@* PRODUCT LIST INDEX *@
+<vc:_directory-alert-component-partial />
+<div class="container-fluid">
+    <div class="row px-xl-5">
+        <div class="col-lg-3 col-md-4">
+            <vc:_price-filter-product-list-component-partial />
+            <vc:_color-filter-product-list-component-partial />
+            <vc:_size-filter-product-list-component-filter />
+        </div>
+        <div class="col-lg-9 col-md-8">
+            <div class="row pb-3">
+                <vc:_sorting-product-list-component-partial />
+                @* <vc:_product-list-component-partial id="ViewBag.categoryID" /> *@
+                @await Component.InvokeAsync("_ProductListComponentPartial", new { id = ViewBag.categoryID })
+                <vc:_pagination-product-list-component-partial />
+            </div>
+        </div>
+    </div>
+</div>
+

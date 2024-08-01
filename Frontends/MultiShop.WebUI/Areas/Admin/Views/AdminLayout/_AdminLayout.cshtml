@@ -1,0 +1,21 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<vc:_head-admin-layout-component-partial />
+
+<body class="sidebar-mini">
+    <div class="wrapper">
+        <vc:_header-admin-layout-component-partial />
+        <vc:_sidebar-admin-layout-component-partial />
+        <div class="content-wrapper">
+            <vc:_content-header-admin-layout-component-partial />
+            @RenderBody()
+        </div>
+        <vc:_footer-admin-layout-component-partial />
+    </div>
+    <vc:_script-admin-layout-component-partial />
+</body>
+</html>

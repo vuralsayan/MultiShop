@@ -1,0 +1,64 @@
+﻿<div class="col-md-6">
+    <h4 class="mb-4">Bir yorum bırak</h4>
+    <small>E-posta adresiniz yayınlanmayacaktır. Zorunlu alanlar * ile işaretlenmiştir</small>
+    <form id="commentForm" method="post" asp-controller="ProductList" asp-action="AddComment">
+        <input type="hidden" name="ProductID" value="@ViewBag.productID">
+        <input type="hidden" name="Rating" id="ratingValue" value="0">
+
+        <div class="d-flex my-3">
+            <p class="mb-0 mr-2">Puan * :</p>
+            <div class="text-primary" id="ratingStars">
+                <i class="far fa-star" data-value="1"></i>
+                <i class="far fa-star" data-value="2"></i>
+                <i class="far fa-star" data-value="3"></i>
+                <i class="far fa-star" data-value="4"></i>
+                <i class="far fa-star" data-value="5"></i>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="name">Adınız Soyadınız *</label>
+            <input type="text" class="form-control" id="name" name="NameSurname">
+        </div>
+        <div class="form-group">
+            <label for="email">Email Adresiniz *</label>
+            <input type="email" class="form-control" id="email" name="Email">
+        </div>
+        <div class="form-group">
+            <label for="message">Yorumunuz *</label>
+            <textarea id="message" cols="30" rows="5" class="form-control" name="CommentDetail"></textarea>
+        </div>
+        <div class="form-group mb-0">
+            <input type="submit" value="Bir yorum bırak" class="btn btn-primary px-3">
+        </div>
+    </form>
+</div>
+
+<style>
+    #ratingStars .fa-star {
+        cursor: pointer;
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const stars = document.querySelectorAll("#ratingStars .fa-star");
+
+        stars.forEach(star => {
+            star.addEventListener("click", function () {
+                const value = parseInt(this.getAttribute("data-value"));
+                document.getElementById("ratingValue").value = value;
+
+                stars.forEach((x, index) => {
+                    if (index < value) {
+                        x.classList.remove("far");
+                        x.classList.add("fas");
+                    } else {
+                        x.classList.remove("fas");
+                        x.classList.add("far");
+                    }
+                });
+            });
+        });
+    });
+</script>

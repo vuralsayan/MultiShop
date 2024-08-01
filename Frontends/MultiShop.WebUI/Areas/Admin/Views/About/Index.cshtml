@@ -1,0 +1,46 @@
+﻿@model List<ResultAboutDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/_AdminLayout.cshtml";
+    int count = 0;
+    bool isDisabled = Model.Count >= 1;
+    string disabledAttribute = isDisabled ? "disabled" : "";
+    string isWorking = isDisabled ? "#" : "/Admin/About/CreateAbout";
+}
+@* ADMIN ABOUT INDEX *@
+<section class="content container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="chart-box">
+                <h4>Hakkımda Listesi</h4>
+                <p>Hakkımda kısmı ile ilgili işlemlerinizi aşağıdaki tablo üzerinden gerçekleştirebilirsiniz.<span class="text-danger">Tema bütünlüğü için 1 adet hakkımda alanı giriniz.</span></p>
+                <div class="bs-example" data-example-id="bordered-table">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Açıklama</th>
+                                <th>Sil</th>
+                                <th>Güncelle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                count++;
+                                <tr>
+                                    <th scope="row">@count</th>
+                                    <td>@item.Description</td>
+                                    <td><a href="/Admin/About/DeleteAbout/@item.AboutID" class="btn btn-danger">Sil</a></td>
+                                    <td><a href="/Admin/About/UpdateAbout/@item.AboutID" class="btn btn-primary">Güncelle</a></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <br />
+                    <a href="@isWorking" @disabledAttribute class="btn btn-success">Yeni Hakkımda Girişi</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

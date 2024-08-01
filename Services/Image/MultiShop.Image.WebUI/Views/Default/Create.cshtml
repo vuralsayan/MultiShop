@@ -1,0 +1,24 @@
+﻿@model MultiShop.Image.WebUI.DAL.Entities.ImageDrive
+@{
+    Layout = null;
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+
+<div class="container">
+    <br /><br />
+    <h1 class="alert alert-primary">Google Drive Storage Resim Yükleme Sayfası</h1>
+
+    <form method="post" enctype="multipart/form-data">
+        <label>Ürün Adı</label>
+        <input type="text" class="form-control border" name="Name" />
+        <br />
+        <label>Dosya Seçin</label>
+        <input type="file" class="form-control border" name="Photo" />
+        <br />
+
+        <input name="SavedUrl" type="hidden" class="form-control" />
+        <input name="SavedFileName" type="hidden" class="form-control" />
+        <button class="btn btn-outline-info">Görseli Kaydet</button>
+    </form>
+</div>

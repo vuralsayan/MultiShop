@@ -1,0 +1,33 @@
+﻿@model UpdateSpecialOfferDto
+@{
+    ViewData["Title"] = "UpdateSpecialOffer";
+    Layout = "~/Areas/Admin/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<section class="content container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="chart-box">
+                <h4>Özel Teklif Güncelleme Sayfası</h4>
+                <form method="post">
+                    <input type="hidden" asp-for="SpecialOfferID" />
+                    <div class="form-group">
+                        <label>Başlık Adı</label>
+                        <input type="text" class="form-control" asp-for="Title">
+                    </div>
+                    <div class="form-group">
+                        <label>Alt Başlık Adı</label>
+                        <input type="text" class="form-control" asp-for="SubTitle">
+                    </div>
+                    <div class="form-group">
+                        <label>Özel Teklif Resim Url</label>
+                        <input type="text" class="form-control" asp-for="ImageUrl">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Güncelle</button>
+                    <a href="/Admin/SpecialOffer/Index" class="btn btn-danger">İptal</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+

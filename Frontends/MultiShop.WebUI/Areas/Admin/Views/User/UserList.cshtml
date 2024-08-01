@@ -1,0 +1,43 @@
+﻿@model List<ResultUserDto>
+@{
+    ViewData["Title"] = "UserList";
+    Layout = "~/Areas/Admin/Views/AdminLayout/_AdminLayout.cshtml";
+    int count = 0;
+}
+@* ADMIN USER LIST INDEX *@
+<section class="content container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="chart-box">
+                <h4>Kullanıcı Listesi</h4>
+                <p>Kullanıcılar ile ilgili işlemlerinizi aşağıdaki tablo üzerinden gerçekleştirebilirsiniz.</p>
+                <div class="bs-example" data-example-id="bordered-table">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Ad Soyad</th>
+                                <th>Kullanıcı Adı</th>
+                                <th>Email</th>
+                                <th>Adres Detayı</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                count++;
+                                <tr>
+                                    <th scope="row">@count</th>
+                                    <td>@item.name @item.surname</td>
+                                    <td>@item.userName</td>
+                                    <td>@item.email</td>
+                                    <td><a href="/Admin/User/UserAddressInfo/@item.id" class="btn btn-info">Adres Detayı</a></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

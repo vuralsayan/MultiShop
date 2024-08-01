@@ -1,0 +1,59 @@
+﻿@model UpdateCommentDto
+@{
+    ViewData["Title"] = "UpdateComment";
+    Layout = "~/Areas/Admin/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<section class="content container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="chart-box">
+                <h4>Yorum Güncelleme Sayfası</h4>
+                <form method="post">
+                    <input type="hidden" asp-for="UserCommentID" />
+                    <input type="hidden" asp-for="ProductID" />
+                    <div class="form-group">
+                        <label>Kullanıcı</label>
+                        <input type="text" class="form-control" readonly asp-for="NameSurname">
+                    </div>
+                    <div class="form-group">
+                        <label>Kullanıcı Görsel Url</label>
+                        <input type="text" class="form-control" readonly asp-for="ImageUrl">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" class="form-control" asp-for="Email">
+                    </div>
+                    <div class="form-group">
+                        <label>Yorum</label>
+                        <textarea class="form-control" rows="4" asp-for="CommentDetail"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Yıldız</label>
+                        <input type="number" class="form-control" asp-for="Rating">
+                    </div>
+                    <div class="form-group">
+                        <label>Tarih</label>
+                        <input type="datetime" class="form-control" asp-for="CreatedDate">
+                    </div>
+                    <div class="form-group">
+                        <label>Durum</label>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" value="true" asp-for="Status">
+                                Aktif
+                            </label>
+                            &nbsp;&nbsp;
+                            <label>
+                                <input type="radio" value="false" asp-for="Status">
+                                Pasif
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Yorumu Güncelle</button>
+                    <a href="/Admin/Comment/Index" class="btn btn-danger">İptal</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

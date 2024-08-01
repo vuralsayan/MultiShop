@@ -1,0 +1,19 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<vc:_head-user-layout-component-partial />
+<body>
+    <div class="container-scroller d-flex">
+        <vc:_sidebar-user-layout-component-partial />
+        <div class="container-fluid page-body-wrapper">
+            <vc:_navbar-user-layout-component-partial />
+            @RenderBody()
+        </div>
+    </div>
+    <vc:_script-user-layout-component-partial />
+</body>
+</html>
